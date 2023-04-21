@@ -1,0 +1,19 @@
+<h1>Update Article</h1>
+
+<form action="updaterecord/{{ mymember.id }}" method="post">
+{% csrf_token %}
+title<br>
+<input name="title" style="width:600px" value="{{ mymember.title }}">
+<br>type<br>
+<input name="type" style="width:600px" value="{{ mymember.type }}">
+<br>tomtat<br>
+<input name="tomtat" style="width:600px" value="{{ mymember.tomtat }}">
+<br><br>
+content<br>
+<textarea style="height:400px;width:600px;font-size:10pt;" name="content">{{ mymember.content }}</textarea>
+<br><br>
+ID:<br>
+<input name="id" value="{{ mymember.id }}">
+<br><br>
+<input type="submit" value="Submit">
+</form>
