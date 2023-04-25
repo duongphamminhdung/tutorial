@@ -10,9 +10,8 @@
 <td>điểm GK</td>
 <td>điểm CK</td>
 <td>Mục tiêu</td>
-<td>Cập nhật điểm</a></td>
 
-{% for x in mymembers %}
+{% for i ,x in mem.items %}
 <tr>
 <td>{{x.title}}</td>
 <td>{{x.hs11 }}</td>
@@ -22,17 +21,10 @@
 <td>{{ x.GK }}</td>
 <td>{{ x.CK}}</td>
 <td>{{x.GOAL}}</td>
-<td><a href="update/{{ x.id }}">Link</a></td>
-<td><a href="delete/{{ x.id }}">Xóa</a></td>
 </tr>
 {% endfor %}
 </table>
 
 <p>
-<a href="add/">Thêm mục tiêu/môn học</a>
+<a href="/">Back home</a>
 </p>
-
-<p>
-    <a href="calc/">Tính điểm cần thiết để đạt mục tiêu</a>
-</p>
-    

@@ -1,12 +1,30 @@
-<h1>Add Article</h1>
+<h1>Thêm môn học</h1>
 
 <form action="addrecord/" method="post">
 {% csrf_token %}
-Article title:<br><input name="title"><br>
-type<br><input name="type"><br>
-Tom tat<br><input name="tomtat"><br>
-<br>Content<br><textarea style="height:400px;width:600px;font-size:10pt;" name="content" id ="content"></textarea>
-<br><br>
-<input type="submit" value="Submit">
+Tên môn học<br>
 
+<input name="title"value="{{ mymember.title }}">
+<br><br>
+
+<br>điểm hs1<br>
+<input name="hs11" value=0.0>
+<input name="hs12" value=0.0>
+<input name="hs13" value=0.0>
+<input name="hs14" value=0.0>
+<br><br>
+
+<br>điểm GK<br>
+<input name="GK" value=0.0>
+<br><br>
+
+<br>điểm CK<br>
+<input name="CK" value=0.0>
+<br><br>
+
+<br>Mục tiêu <br>
+<input name="GOAL" value=0.0>
+<br><br>
+
+<input type="submit" value="Submit">
 </form>

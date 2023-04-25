@@ -2,18 +2,29 @@
 
 <form action="updaterecord/{{ mymember.id }}" method="post">
 {% csrf_token %}
-title<br>
-<input name="title" style="width:600px" value="{{ mymember.title }}">
-<br>type<br>
-<input name="type" style="width:600px" value="{{ mymember.type }}">
-<br>tomtat<br>
-<input name="tomtat" style="width:600px" value="{{ mymember.tomtat }}">
+Tên môn học<br>
+
+<input name="title"value="{{ mymember.title }}">
 <br><br>
-content<br>
-<textarea style="height:400px;width:600px;font-size:10pt;" name="content">{{ mymember.content }}</textarea>
+
+<br>điểm hs1<br>
+<input name="hs11" value="{{ mymember.hs11 }}">
+<input name="hs12" value="{{ mymember.hs12 }}">
+<input name="hs13" value="{{ mymember.hs13 }}">
+<input name="hs14" value="{{ mymember.hs14 }}">
 <br><br>
-ID:<br>
-<input name="id" value="{{ mymember.id }}">
+
+<br>điểm GK<br>
+<input name="GK" value="{{ mymember.GK }}">
 <br><br>
+
+<br>điểm CK<br>
+<input name="CK" value="{{ mymember.CK }}">
+<br><br>
+
+<br>Mục tiêu <br>
+<input name="GOAL" value="{{ mymember.CK }}">
+<br><br>
+
 <input type="submit" value="Submit">
 </form>
