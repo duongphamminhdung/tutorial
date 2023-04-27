@@ -99,3 +99,30 @@ def calc(request):
         # print(x.title, x.hs11, x.hs12)
         print(x)
     return HttpResponse(template.render(context, request))
+
+def calc_all(request):
+    mymember = Members.objects.all().values()
+    m = {}
+    for i in mymember:
+        mean_ = 0
+        count = 0
+        if float(i['hs11']) != 0.0:count += 1
+        if float(i['hs12']) != 0.0:count += 1
+        if float(i['hs13']) != 0.0:count += 1
+        if float(i['hs14']) != 0.0:count += 1
+        if float(i['GK']) != 0.0:count += 2
+        if float(i['CK']) != 0.0:count += 3
+        mean_ = (float(i['hs11'])+float(i['hs12'])+float(i['hs13'])+float(i['hs14'])+float(i['GK'])*2+float(i['CK'])*3)
+        mean_ = mean_ / count
+        mean_ = round(mean_, 2)
+        mean_ = str(mean_)
+
+        m.update({i['id']:{'title':i['title'], 'point':mean_}})
+    template = loader.get_template('calcall.html')
+    context = {
+    'mem': m,
+    }
+    for i, x in m.items():
+        # print(x.title, x.hs11, x.hs12)
+        print(x)
+    return HttpResponse(template.render(context, request))

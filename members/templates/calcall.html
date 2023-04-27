@@ -1,0 +1,18 @@
+<h1>Bảng điểm</h1>
+
+<table border="1">
+<tr>
+<td>Môn học</td>
+<td>điểm Trung Bình</td>
+
+{% for i ,x in mem.items %}
+<tr>
+<td>{{x.title}}</td>
+<td>{{x.point }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<p>
+<a href="/">Back home</a>
+</p>

@@ -27,5 +27,6 @@ urlpatterns = [
     path('update/<int:id>', views.update, name='update'),
     path('update/updaterecord/<int:id>', views.updaterecord, name='updaterecord'),
     path('calc/', views.calc, name='calc'),
+    path('calc_all/', views.calc_all, name='calcall'),
 
 ]
